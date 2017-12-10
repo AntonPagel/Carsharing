@@ -1,0 +1,13 @@
+C:\Users\Anton\Documents\Visual Studio 2017\Projects\Carsharing\Carsharing\bin\Debug\Carsharing.exe.config
+C:\Users\Anton\Documents\Visual Studio 2017\Projects\Carsharing\Carsharing\bin\Debug\Carsharing.exe
+C:\Users\Anton\Documents\Visual Studio 2017\Projects\Carsharing\Carsharing\bin\Debug\Carsharing.pdb
+C:\Users\Anton\Documents\Visual Studio 2017\Projects\Carsharing\Carsharing\obj\Debug\Carsharing.csprojResolveAssemblyReference.cache
+C:\Users\Anton\Documents\Visual Studio 2017\Projects\Carsharing\Carsharing\obj\Debug\Carsharing.Properties.Resources.resources
+C:\Users\Anton\Documents\Visual Studio 2017\Projects\Carsharing\Carsharing\obj\Debug\Carsharing.csproj.GenerateResource.Cache
+C:\Users\Anton\Documents\Visual Studio 2017\Projects\Carsharing\Carsharing\obj\Debug\Carsharing.exe
+C:\Users\Anton\Documents\Visual Studio 2017\Projects\Carsharing\Carsharing\obj\Debug\Carsharing.pdb
+C:\Users\Anton\Documents\Visual Studio 2017\Projects\Carsharing\Carsharing\obj\Debug\Carsharing.LoginView.resources
+C:\Users\Anton\Documents\Visual Studio 2017\Projects\Carsharing\Carsharing\obj\Debug\Carsharing.CarView.resources
+C:\Users\Anton\Documents\Visual Studio 2017\Projects\Carsharing\Carsharing\bin\Debug\MySql.Data.dll
+C:\Users\Anton\Documents\Visual Studio 2017\Projects\Carsharing\Carsharing\bin\Debug\MySql.Data.xml
+C:\Users\Anton\Documents\Visual Studio 2017\Projects\Carsharing\Carsharing\obj\Debug\Carsharing.SignUpView.resources
