@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Globalization;
 
 namespace Carsharing
 {
@@ -35,15 +36,15 @@ namespace Carsharing
             }
         }
 
-        internal static void InsertCar(string name, string make, int power, int seats, int trunksize, string carClass, string gearbox, string fuel, bool coupling, int location_id)
+        internal static void InsertCar(string name, string make, int power, int seats, int trunksize, string carClass, string gearbox, string fuel, bool coupling, int location_id, DateTime reserved, DateTime blocked, string reservedBy, string blockedBy)
         {
             using (MySqlConnection mySqlConnection = new MySqlConnection(Properties.Resources.connectionString))
             {
                 try
                 {
                     mySqlConnection.Open();
-                    MySqlCommand mySqlCommand = new MySqlCommand("INSERT INTO car (name, make, power, seats, trunksize, class, gearbox, fuel, coupling, location_id) "
-                        + "VALUES (@name, @make, @power, @seats, @trunksize, @class, @gearbox, @fuel, @coupling, @location_id)", mySqlConnection);
+                    MySqlCommand mySqlCommand = new MySqlCommand("INSERT INTO car (name, make, power, seats, trunksize, class, gearbox, fuel, coupling, location_id, reserved, blocked, reservedby, blockedby) "
+                        + "VALUES (@name, @make, @power, @seats, @trunksize, @class, @gearbox, @fuel, @coupling, @location_id, @reserved, @blocked)", mySqlConnection);
                     mySqlCommand.Parameters.AddWithValue("name", name);
                     mySqlCommand.Parameters.AddWithValue("make", make);
                     mySqlCommand.Parameters.AddWithValue("power", power);
@@ -54,6 +55,10 @@ namespace Carsharing
                     mySqlCommand.Parameters.AddWithValue("fuel", fuel);
                     mySqlCommand.Parameters.AddWithValue("coupling", coupling);
                     mySqlCommand.Parameters.AddWithValue("location_id", location_id);
+                    mySqlCommand.Parameters.AddWithValue("reserved", reserved.ToString("yyyy-MM-dd HH:mm:ss"));
+                    mySqlCommand.Parameters.AddWithValue("blocked", blocked.ToString("yyyy-MM-dd HH:mm:ss"));
+                    mySqlCommand.Parameters.AddWithValue("reservedby", reservedBy);
+                    mySqlCommand.Parameters.AddWithValue("blockedby", blockedBy);
                     mySqlCommand.Prepare();
                     mySqlCommand.ExecuteNonQuery();
                 }
@@ -223,7 +228,11 @@ namespace Carsharing
                                 Gearbox = row.ItemArray[7].ToString(),
                                 Fuel = row.ItemArray[8].ToString(),
                                 Coupling = Convert.ToBoolean(row.ItemArray[9]),
-                                Location = GetLocation(Convert.ToInt32(row.ItemArray[10]), mySqlConnection)
+                                Location = GetLocation(Convert.ToInt32(row.ItemArray[10]), mySqlConnection),
+                                Reserved = Convert.ToDateTime(row.ItemArray[11]),
+                                Blocked = Convert.ToDateTime(row.ItemArray[12]),
+                                ReservedBy = row.ItemArray[13].ToString(),
+                                BlockedBy = row.ItemArray[14].ToString()
                             });
                         }
                     }

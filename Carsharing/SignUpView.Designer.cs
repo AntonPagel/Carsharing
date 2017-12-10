@@ -197,7 +197,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "SignUpView";
-            this.Text = "SignUp";
+            this.Text = "Sign Up";
             this.ResumeLayout(false);
             this.PerformLayout();
 

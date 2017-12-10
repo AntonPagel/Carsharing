@@ -22,10 +22,28 @@ namespace Carsharing
             loginView.Control("loginButton").Click += loginViewLoginButtonClick;
             loginView.Control("signUpButton").Click += loginViewSignUpButtonClick;
             carView.Control("searchTextBox").TextChanged += carViewSearchTextBoxTextChanged;
+            ((ListBox)carView.Control("carListBox")).SelectedValueChanged += carViewCarListBoxSelectedValueChanged;
             carView.Shown += carViewShown;
             signUpView.Control("signUpButton").Click += signUpViewSignUpButtonClick;
             signUpView.FormClosing += signUpViewFormClosing;
             loginView.ShowDialog();
+        }
+
+        private void carViewCarListBoxSelectedValueChanged(object sender, EventArgs e)
+        {
+            CarModel carModel = ((ListBox)sender).SelectedItem as CarModel;
+            carView.Control("nameTextBox").Text = carModel.Name;
+            carView.Control("makeTextBox").Text = carModel.Make;
+            carView.Control("powerTextBox").Text = carModel.Power.ToString();
+            carView.Control("seatsTextBox").Text = carModel.Seats.ToString();
+            carView.Control("trunksizeTextBox").Text = carModel.Trunksize.ToString();
+            carView.Control("classTextBox").Text = carModel.CarClass;
+            carView.Control("gearboxTextBox").Text = carModel.Gearbox;
+            carView.Control("fuelTextBox").Text = carModel.Fuel;
+            carView.Control("couplingTextBox").Text = carModel.Coupling.ToString();
+            carView.Control("postcodeTextBox").Text = carModel.Location.Postcode;
+            carView.Control("cityTextBox").Text = carModel.Location.City;
+            carView.Control("streetTextBox").Text = carModel.Location.Street;
         }
 
         private void signUpViewSignUpButtonClick(object sender, EventArgs e)
@@ -74,7 +92,21 @@ namespace Carsharing
 
         private void carViewShown(object sender, EventArgs e)
         {
-            carModels = Database.GetCars();
+            foreach (CarModel carModel in Database.GetCars())
+            {
+                if ((carModel.Reserved - DateTime.Now).CompareTo(TimeSpan.Zero) < 0 && (carModel.Blocked - DateTime.Now).CompareTo(TimeSpan.Zero) < 0)
+                {
+                    carModels.Add(carModel);
+                }
+                else if (signUpView.Control("usernameTextBox").Text.ToUpper().Equals(carModel.ReservedBy.ToUpper()))
+                {
+                    carModels.Add(carModel);
+                }
+                else if (signUpView.Control("usernameTextBox").Text.ToUpper().Equals(carModel.BlockedBy.ToUpper()))
+                {
+                    carModels.Add(carModel);
+                }
+            }
             ((ListBox)carView.Control("carListBox")).Items.AddRange(carModels.ToArray());
         }
 
@@ -88,14 +120,15 @@ namespace Carsharing
             }
             else
             {
+                CarModel[] selectedCarModels = carModels.Where(x => x.Name.ToUpper().Contains(searchText.ToUpper())).ToArray();
                 ((ListBox)carView.Control("carListBox")).Items.Clear();
-                var a = carModels.Where(x => x.Name.Contains(searchText));
-                ((ListBox)carView.Control("carListBox")).Items.AddRange(a.ToArray());
+                ((ListBox)carView.Control("carListBox")).Items.AddRange(selectedCarModels);
             }
         }
 
         private void loginViewLoginButtonClick(object sender, EventArgs e)
         {
+            Database.InsertUser("a", Encoding.UTF8.GetString(SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes("1234"))), "", "", "", "", "", false);
             string username = loginView.Control("usernameTextBox").Text;
             string password = loginView.Control("passwordTextBox").Text;
             string passwordSha = Encoding.UTF8.GetString(SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(password)));

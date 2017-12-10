@@ -44,9 +44,9 @@
             this.welcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcomeLabel.Location = new System.Drawing.Point(12, 9);
             this.welcomeLabel.Name = "welcomeLabel";
-            this.welcomeLabel.Size = new System.Drawing.Size(101, 25);
+            this.welcomeLabel.Size = new System.Drawing.Size(125, 25);
             this.welcomeLabel.TabIndex = 0;
-            this.welcomeLabel.Text = "Welcome!";
+            this.welcomeLabel.Text = "Willkommen!";
             // 
             // usernameLabel
             // 

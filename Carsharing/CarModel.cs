@@ -78,32 +78,18 @@ namespace Carsharing
             set { coupling = value; }
         }
 
-        private int locationId;
-        public int LocationId
+        private DateTime reserved;
+        public DateTime Reserved
         {
-            get { return locationId; }
-            set { locationId = value; }
+            get { return reserved; }
+            set { reserved = value; }
         }
 
-        private string postcode;
-        public string Postcode
+        private DateTime blocked;
+        public DateTime Blocked
         {
-            get { return postcode; }
-            set { postcode = value; }
-        }
-
-        private string city;
-        public string City
-        {
-            get { return city; }
-            set { city = value; }
-        }
-
-        private string street;
-        public string Street
-        {
-            get { return street; }
-            set { street = value; }
+            get { return blocked; }
+            set { blocked = value; }
         }
 
         private LocationModel location;
@@ -111,6 +97,20 @@ namespace Carsharing
         {
             get { return location; }
             set { location = value; }
+        }
+
+        private string reservedBy;
+        public string ReservedBy
+        {
+            get { return reservedBy; }
+            set { reservedBy = value; }
+        }
+
+        private string blockedBy;
+        public string BlockedBy
+        {
+            get { return blockedBy; }
+            set { blockedBy = value; }
         }
 
         public CarModel()
