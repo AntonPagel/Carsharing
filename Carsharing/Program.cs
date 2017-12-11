@@ -17,6 +17,7 @@ namespace Carsharing
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Controller controller = new Controller();
+            Application.Run(new LoginView(controller));
         }
     }
 }

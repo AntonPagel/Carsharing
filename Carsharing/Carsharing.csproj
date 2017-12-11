@@ -85,7 +85,6 @@
       <DependentUpon>CarView.cs</DependentUpon>
     </Compile>
     <Compile Include="Controller.cs" />
-    <Compile Include="Database.cs" />
     <Compile Include="LocationModel.cs" />
     <Compile Include="LoginView.cs">
       <SubType>Form</SubType>
@@ -101,6 +100,7 @@
     <Compile Include="SignUpView.Designer.cs">
       <DependentUpon>SignUpView.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserModel.cs" />
     <EmbeddedResource Include="CarView.resx">
       <DependentUpon>CarView.cs</DependentUpon>
     </EmbeddedResource>

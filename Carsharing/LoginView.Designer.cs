@@ -91,6 +91,7 @@
             this.loginButton.TabIndex = 3;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.LoginButtonClick);
             // 
             // adminModeCheckBox
             // 
@@ -111,6 +112,7 @@
             this.signUpButton.TabIndex = 4;
             this.signUpButton.Text = "Sign Up";
             this.signUpButton.UseVisualStyleBackColor = true;
+            this.signUpButton.Click += new System.EventHandler(this.SignUpButtonClick);
             // 
             // LoginView
             // 

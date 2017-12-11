@@ -57,7 +57,7 @@
             this.reserveButton = new System.Windows.Forms.Button();
             this.blockButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.addCarButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // searchTextBox
@@ -68,6 +68,7 @@
             this.searchTextBox.Size = new System.Drawing.Size(141, 20);
             this.searchTextBox.TabIndex = 0;
             this.searchTextBox.TabStop = false;
+            this.searchTextBox.TextChanged += new System.EventHandler(this.SearchTextBoxTextChanged);
             // 
             // carListBox
             // 
@@ -79,6 +80,7 @@
             this.carListBox.Sorted = true;
             this.carListBox.TabIndex = 0;
             this.carListBox.TabStop = false;
+            this.carListBox.SelectedValueChanged += new System.EventHandler(this.CarListBoxSelectedValueChanged);
             // 
             // nameTextBox
             // 
@@ -280,6 +282,7 @@
             this.reserveButton.TabIndex = 13;
             this.reserveButton.Text = "Für 2 Stunden reservieren";
             this.reserveButton.UseVisualStyleBackColor = true;
+            this.reserveButton.Click += new System.EventHandler(this.ReserveButtonClick);
             // 
             // blockButton
             // 
@@ -298,22 +301,24 @@
             this.saveButton.TabIndex = 15;
             this.saveButton.Text = "Änderungen speichern";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.SaveButtonClick);
             // 
-            // button4
+            // addCarButton
             // 
-            this.button4.Location = new System.Drawing.Point(349, 318);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(139, 23);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.addCarButton.Location = new System.Drawing.Point(349, 318);
+            this.addCarButton.Name = "addCarButton";
+            this.addCarButton.Size = new System.Drawing.Size(139, 23);
+            this.addCarButton.TabIndex = 16;
+            this.addCarButton.Text = "Auto hinzufügen";
+            this.addCarButton.UseVisualStyleBackColor = true;
+            this.addCarButton.Click += new System.EventHandler(this.AddCarButtonClick);
             // 
             // CarView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(806, 358);
-            this.Controls.Add(this.button4);
+            this.ClientSize = new System.Drawing.Size(509, 358);
+            this.Controls.Add(this.addCarButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.blockButton);
             this.Controls.Add(this.reserveButton);
@@ -347,6 +352,7 @@
             this.MaximizeBox = false;
             this.Name = "CarView";
             this.Text = "Rocket";
+            this.Shown += new System.EventHandler(this.CarViewShown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,6 +389,6 @@
         private System.Windows.Forms.Button reserveButton;
         private System.Windows.Forms.Button blockButton;
         private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button addCarButton;
     }
 }

@@ -7,19 +7,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace Carsharing
 {
     public partial class SignUpView : Form
     {
-        public SignUpView()
+        private Controller controller;
+
+        public SignUpView(Controller controller)
         {
+            this.controller = controller;
             InitializeComponent();
         }
 
-        public Control Control(string key)
+        private void SignUpButtonClick(object sender, EventArgs e)
         {
-            return Controls.Find(key, false).First();
+            foreach (TextBox textBox in Controls.OfType<TextBox>())
+            {
+                if (string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    return;
+                }
+            }
+            if (controller.InsertUser(usernameTextBox.Text,
+                Encoding.UTF8.GetString(SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(passwordTextBox.Text))),
+                emailTextBox.Text, firstnameTextBox.Text, lastnameTextBox.Text,
+                birthdayDateTimePicker.Value.ToShortDateString(), ibanTextBox.Text, false))
+            {
+                Close();
+            }
         }
     }
 }
