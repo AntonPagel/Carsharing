@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Carsharing")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Eine Anwendung zum Reservieren, Ausleihen und Bearbeiten von Autos. Support e-Mail Adresse: support@rocketcarsharing.com")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("RocketCarsharing")]
 [assembly: AssemblyProduct("Carsharing")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]

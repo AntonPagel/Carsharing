@@ -15,7 +15,7 @@ namespace Carsharing
 
         public LocationModel()
         {
-            Id = -1;
+            Id = 0;
         }
     }
 }

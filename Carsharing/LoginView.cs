@@ -15,6 +15,7 @@ namespace Carsharing
     {
         private Controller controller;
         private SignUpView signUpView;
+        private AboutBox aboutBox = new AboutBox();
         private CarView carView;
 
         public LoginView(Controller controller)
@@ -35,9 +36,11 @@ namespace Carsharing
         {
             string username = usernameTextBox.Text;
             string password = passwordTextBox.Text;
-            string passwordSha = Encoding.UTF8.GetString(SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(password)));
+            string passwordSha = controller.Sha256(password);
             controller.UserModel = controller.GetUser(username);
-            if (!string.IsNullOrWhiteSpace(username) && !string.IsNullOrWhiteSpace(password) && controller.UserModel != null && controller.UserModel.Check(username, passwordSha))
+
+            if (!string.IsNullOrWhiteSpace(username) && !string.IsNullOrWhiteSpace(password) &&
+                controller.UserModel != null && controller.UserModel.Check(username, passwordSha))
             {
                 controller.UserModel.Admin &= adminModeCheckBox.Checked;
                 Hide();
@@ -48,6 +51,11 @@ namespace Carsharing
         private void SignUpButtonClick(object sender, EventArgs e)
         {
             signUpView.ShowDialog();
+        }
+
+        private void LoginViewHelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            aboutBox.ShowDialog();
         }
     }
 }

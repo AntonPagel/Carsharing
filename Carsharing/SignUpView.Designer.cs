@@ -199,6 +199,8 @@
             this.MaximizeBox = false;
             this.Name = "SignUpView";
             this.Text = "Sign Up";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SignUpViewFormClosing);
+            this.Load += new System.EventHandler(this.SignUpViewLoad);
             this.ResumeLayout(false);
             this.PerformLayout();
 

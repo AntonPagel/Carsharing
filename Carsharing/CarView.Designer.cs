@@ -51,13 +51,14 @@
             this.streetLabel = new System.Windows.Forms.Label();
             this.cityLabel = new System.Windows.Forms.Label();
             this.postcodeLabel = new System.Windows.Forms.Label();
-            this.couplingTextBox = new System.Windows.Forms.TextBox();
             this.cityTextBox = new System.Windows.Forms.TextBox();
             this.postcodeTextBox = new System.Windows.Forms.TextBox();
             this.reserveButton = new System.Windows.Forms.Button();
             this.blockButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.addCarButton = new System.Windows.Forms.Button();
+            this.couplingComboBox = new System.Windows.Forms.ComboBox();
+            this.couplingTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // searchTextBox
@@ -84,17 +85,19 @@
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(191, 31);
+            this.nameTextBox.Location = new System.Drawing.Point(185, 31);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(139, 20);
+            this.nameTextBox.Size = new System.Drawing.Size(146, 20);
             this.nameTextBox.TabIndex = 1;
+            this.nameTextBox.Tag = "adminInput";
             // 
             // powerTextBox
             // 
-            this.powerTextBox.Location = new System.Drawing.Point(191, 109);
+            this.powerTextBox.Location = new System.Drawing.Point(185, 109);
             this.powerTextBox.Name = "powerTextBox";
-            this.powerTextBox.Size = new System.Drawing.Size(139, 20);
+            this.powerTextBox.Size = new System.Drawing.Size(146, 20);
             this.powerTextBox.TabIndex = 3;
+            this.powerTextBox.Tag = "adminInput";
             // 
             // fuelTextBox
             // 
@@ -102,6 +105,7 @@
             this.fuelTextBox.Name = "fuelTextBox";
             this.fuelTextBox.Size = new System.Drawing.Size(139, 20);
             this.fuelTextBox.TabIndex = 8;
+            this.fuelTextBox.Tag = "adminInput";
             // 
             // gearboxTextBox
             // 
@@ -109,39 +113,44 @@
             this.gearboxTextBox.Name = "gearboxTextBox";
             this.gearboxTextBox.Size = new System.Drawing.Size(139, 20);
             this.gearboxTextBox.TabIndex = 7;
+            this.gearboxTextBox.Tag = "adminInput";
             // 
             // classTextBox
             // 
-            this.classTextBox.Location = new System.Drawing.Point(191, 226);
+            this.classTextBox.Location = new System.Drawing.Point(185, 226);
             this.classTextBox.Name = "classTextBox";
-            this.classTextBox.Size = new System.Drawing.Size(139, 20);
+            this.classTextBox.Size = new System.Drawing.Size(146, 20);
             this.classTextBox.TabIndex = 6;
+            this.classTextBox.Tag = "adminInput";
             // 
             // trunksizeTextBox
             // 
-            this.trunksizeTextBox.Location = new System.Drawing.Point(191, 187);
+            this.trunksizeTextBox.Location = new System.Drawing.Point(185, 187);
             this.trunksizeTextBox.Name = "trunksizeTextBox";
-            this.trunksizeTextBox.Size = new System.Drawing.Size(139, 20);
+            this.trunksizeTextBox.Size = new System.Drawing.Size(146, 20);
             this.trunksizeTextBox.TabIndex = 5;
+            this.trunksizeTextBox.Tag = "adminInput";
             // 
             // seatsTextBox
             // 
-            this.seatsTextBox.Location = new System.Drawing.Point(191, 148);
+            this.seatsTextBox.Location = new System.Drawing.Point(185, 148);
             this.seatsTextBox.Name = "seatsTextBox";
-            this.seatsTextBox.Size = new System.Drawing.Size(139, 20);
+            this.seatsTextBox.Size = new System.Drawing.Size(146, 20);
             this.seatsTextBox.TabIndex = 4;
+            this.seatsTextBox.Tag = "adminInput";
             // 
             // makeTextBox
             // 
-            this.makeTextBox.Location = new System.Drawing.Point(191, 70);
+            this.makeTextBox.Location = new System.Drawing.Point(185, 70);
             this.makeTextBox.Name = "makeTextBox";
-            this.makeTextBox.Size = new System.Drawing.Size(139, 20);
+            this.makeTextBox.Size = new System.Drawing.Size(146, 20);
             this.makeTextBox.TabIndex = 2;
+            this.makeTextBox.Tag = "adminInput";
             // 
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(188, 15);
+            this.nameLabel.Location = new System.Drawing.Point(182, 15);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(35, 13);
             this.nameLabel.TabIndex = 0;
@@ -168,7 +177,7 @@
             // classLabel
             // 
             this.classLabel.AutoSize = true;
-            this.classLabel.Location = new System.Drawing.Point(188, 210);
+            this.classLabel.Location = new System.Drawing.Point(182, 210);
             this.classLabel.Name = "classLabel";
             this.classLabel.Size = new System.Drawing.Size(38, 13);
             this.classLabel.TabIndex = 0;
@@ -177,7 +186,7 @@
             // trunksizeLabel
             // 
             this.trunksizeLabel.AutoSize = true;
-            this.trunksizeLabel.Location = new System.Drawing.Point(188, 171);
+            this.trunksizeLabel.Location = new System.Drawing.Point(182, 171);
             this.trunksizeLabel.Name = "trunksizeLabel";
             this.trunksizeLabel.Size = new System.Drawing.Size(85, 13);
             this.trunksizeLabel.TabIndex = 0;
@@ -186,7 +195,7 @@
             // seatsLabel
             // 
             this.seatsLabel.AutoSize = true;
-            this.seatsLabel.Location = new System.Drawing.Point(188, 132);
+            this.seatsLabel.Location = new System.Drawing.Point(182, 132);
             this.seatsLabel.Name = "seatsLabel";
             this.seatsLabel.Size = new System.Drawing.Size(52, 13);
             this.seatsLabel.TabIndex = 0;
@@ -195,7 +204,7 @@
             // powerLabel
             // 
             this.powerLabel.AutoSize = true;
-            this.powerLabel.Location = new System.Drawing.Point(188, 93);
+            this.powerLabel.Location = new System.Drawing.Point(182, 93);
             this.powerLabel.Name = "powerLabel";
             this.powerLabel.Size = new System.Drawing.Size(47, 13);
             this.powerLabel.TabIndex = 0;
@@ -204,7 +213,7 @@
             // makeLabel
             // 
             this.makeLabel.AutoSize = true;
-            this.makeLabel.Location = new System.Drawing.Point(188, 54);
+            this.makeLabel.Location = new System.Drawing.Point(182, 54);
             this.makeLabel.Name = "makeLabel";
             this.makeLabel.Size = new System.Drawing.Size(37, 13);
             this.makeLabel.TabIndex = 0;
@@ -225,6 +234,7 @@
             this.streetTextBox.Name = "streetTextBox";
             this.streetTextBox.Size = new System.Drawing.Size(139, 20);
             this.streetTextBox.TabIndex = 12;
+            this.streetTextBox.Tag = "adminInput";
             // 
             // streetLabel
             // 
@@ -253,19 +263,13 @@
             this.postcodeLabel.TabIndex = 0;
             this.postcodeLabel.Text = "Postleitzahl";
             // 
-            // couplingTextBox
-            // 
-            this.couplingTextBox.Location = new System.Drawing.Point(349, 109);
-            this.couplingTextBox.Name = "couplingTextBox";
-            this.couplingTextBox.Size = new System.Drawing.Size(139, 20);
-            this.couplingTextBox.TabIndex = 9;
-            // 
             // cityTextBox
             // 
             this.cityTextBox.Location = new System.Drawing.Point(349, 187);
             this.cityTextBox.Name = "cityTextBox";
             this.cityTextBox.Size = new System.Drawing.Size(139, 20);
             this.cityTextBox.TabIndex = 11;
+            this.cityTextBox.Tag = "adminInput";
             // 
             // postcodeTextBox
             // 
@@ -273,12 +277,13 @@
             this.postcodeTextBox.Name = "postcodeTextBox";
             this.postcodeTextBox.Size = new System.Drawing.Size(139, 20);
             this.postcodeTextBox.TabIndex = 10;
+            this.postcodeTextBox.Tag = "adminInput";
             // 
             // reserveButton
             // 
-            this.reserveButton.Location = new System.Drawing.Point(191, 274);
+            this.reserveButton.Location = new System.Drawing.Point(185, 274);
             this.reserveButton.Name = "reserveButton";
-            this.reserveButton.Size = new System.Drawing.Size(139, 23);
+            this.reserveButton.Size = new System.Drawing.Size(146, 23);
             this.reserveButton.TabIndex = 13;
             this.reserveButton.Text = "Für 2 Stunden reservieren";
             this.reserveButton.UseVisualStyleBackColor = true;
@@ -292,13 +297,15 @@
             this.blockButton.TabIndex = 14;
             this.blockButton.Text = "Ausleihen";
             this.blockButton.UseVisualStyleBackColor = true;
+            this.blockButton.Click += new System.EventHandler(this.BlockButtonClick);
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(191, 318);
+            this.saveButton.Location = new System.Drawing.Point(185, 318);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(139, 23);
+            this.saveButton.Size = new System.Drawing.Size(146, 23);
             this.saveButton.TabIndex = 15;
+            this.saveButton.Tag = "adminInput";
             this.saveButton.Text = "Änderungen speichern";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.SaveButtonClick);
@@ -309,22 +316,45 @@
             this.addCarButton.Name = "addCarButton";
             this.addCarButton.Size = new System.Drawing.Size(139, 23);
             this.addCarButton.TabIndex = 16;
+            this.addCarButton.Tag = "adminInput";
             this.addCarButton.Text = "Auto hinzufügen";
             this.addCarButton.UseVisualStyleBackColor = true;
             this.addCarButton.Click += new System.EventHandler(this.AddCarButtonClick);
+            // 
+            // couplingComboBox
+            // 
+            this.couplingComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.couplingComboBox.FormattingEnabled = true;
+            this.couplingComboBox.Items.AddRange(new object[] {
+            "Ja",
+            "Nein"});
+            this.couplingComboBox.Location = new System.Drawing.Point(349, 108);
+            this.couplingComboBox.Name = "couplingComboBox";
+            this.couplingComboBox.Size = new System.Drawing.Size(139, 21);
+            this.couplingComboBox.TabIndex = 9;
+            this.couplingComboBox.Tag = "adminInput";
+            // 
+            // couplingTextBox
+            // 
+            this.couplingTextBox.Location = new System.Drawing.Point(349, 109);
+            this.couplingTextBox.Name = "couplingTextBox";
+            this.couplingTextBox.Size = new System.Drawing.Size(139, 20);
+            this.couplingTextBox.TabIndex = 9;
+            this.couplingTextBox.Tag = "adminInput";
             // 
             // CarView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(509, 358);
+            this.Controls.Add(this.couplingTextBox);
+            this.Controls.Add(this.couplingComboBox);
             this.Controls.Add(this.addCarButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.blockButton);
             this.Controls.Add(this.reserveButton);
             this.Controls.Add(this.postcodeTextBox);
             this.Controls.Add(this.cityTextBox);
-            this.Controls.Add(this.couplingTextBox);
             this.Controls.Add(this.postcodeLabel);
             this.Controls.Add(this.cityLabel);
             this.Controls.Add(this.streetLabel);
@@ -383,12 +413,13 @@
         private System.Windows.Forms.Label streetLabel;
         private System.Windows.Forms.Label cityLabel;
         private System.Windows.Forms.Label postcodeLabel;
-        private System.Windows.Forms.TextBox couplingTextBox;
         private System.Windows.Forms.TextBox cityTextBox;
         private System.Windows.Forms.TextBox postcodeTextBox;
         private System.Windows.Forms.Button reserveButton;
         private System.Windows.Forms.Button blockButton;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button addCarButton;
+        private System.Windows.Forms.ComboBox couplingComboBox;
+        private System.Windows.Forms.TextBox couplingTextBox;
     }
 }

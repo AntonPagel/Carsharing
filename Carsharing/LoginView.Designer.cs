@@ -128,9 +128,12 @@
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.welcomeLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HelpButton = true;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "LoginView";
             this.Text = "Login";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.LoginViewHelpButtonClicked);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -21,6 +21,11 @@ namespace Carsharing
             InitializeComponent();
         }
 
+        private void SignUpViewLoad(object sender, EventArgs e)
+        {
+            birthdayDateTimePicker.Value = DateTime.Now;
+        }
+
         private void SignUpButtonClick(object sender, EventArgs e)
         {
             foreach (TextBox textBox in Controls.OfType<TextBox>())
@@ -30,13 +35,21 @@ namespace Carsharing
                     return;
                 }
             }
-            if (controller.InsertUser(usernameTextBox.Text,
-                Encoding.UTF8.GetString(SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(passwordTextBox.Text))),
+            if (controller.InsertUser(usernameTextBox.Text, controller.Sha256(passwordTextBox.Text),
                 emailTextBox.Text, firstnameTextBox.Text, lastnameTextBox.Text,
                 birthdayDateTimePicker.Value.ToShortDateString(), ibanTextBox.Text, false))
             {
                 Close();
             }
+        }
+
+        private void SignUpViewFormClosing(object sender, FormClosingEventArgs e)
+        {
+            foreach (TextBox textBox in Controls.OfType<TextBox>())
+            {
+                textBox.Text = "";
+            }
+            birthdayDateTimePicker.Value = DateTime.Now;
         }
     }
 }

@@ -24,3 +24,4 @@ C:\Users\Anton\Documents\GitHub\Carsharing\Carsharing\obj\Debug\Carsharing.SignU
 C:\Users\Anton\Documents\GitHub\Carsharing\Carsharing\obj\Debug\Carsharing.csproj.GenerateResource.Cache
 C:\Users\Anton\Documents\GitHub\Carsharing\Carsharing\obj\Debug\Carsharing.exe
 C:\Users\Anton\Documents\GitHub\Carsharing\Carsharing\obj\Debug\Carsharing.pdb
+C:\Users\Anton\Documents\GitHub\Carsharing\Carsharing\obj\Debug\Carsharing.AboutBox.resources
